@@ -1,0 +1,437 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* ========== Paleta de colores personalizada ========== */
+:root {
+    --color-primario: #885d2f;
+    --color-secundario: #d1bda7;
+    --color-acento: #9d6745;
+    --color-claro: #d6c58e;
+    --color-fondo: #1c130e;
+    --color-texto: #fefefe;
+    --color-hover: #613920;
+    --color-borde: #4b4c47;
+    --color-card: #72684f;
+  }
+  
+  /* ========== Estilos generales ========== */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--color-texto);
+    background-color: var(--color-fondo);
+    line-height: 1.6;
+  }
+  
+  header {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: var(--color-card);
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--color-texto);
+    font-weight: 500;
+  }
+  
+  nav a:hover {
+    color: var(--color-claro);
+  }
+  
+  /* Botón de menú (visible solo en móvil) */
+  .menu-toggle {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--color-claro);
+    cursor: pointer;
+    transition: color 0.3s ease;
+    display: none; /* Oculto por defecto */
+  }
+  
+  .menu-toggle:hover {
+    color: var(--color-hover);
+  }
+  
+  @media (max-width: 768px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: var(--color-card);
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 200px;
+      padding: 1rem;
+      border-left: 1px solid var(--color-borde);
+    }
+  
+    .nav-links.active {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  }
+  
+  /* ========== Hero section ========== */
+  .hero {
+    text-align: center;
+    padding: 100px 20px;
+    background-image: url('assets/torre2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--color-texto);
+  }
+  
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .hero h3 {
+    font-size: 2.1rem;
+    margin-bottom: 20px;
+    color: var(--color-texto);
+
+  }
+  
+  .btn {
+    border: 2px solid var(--color-fondo);
+    background-color: transparent;
+    color: #1e1514;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: var(--color-hover);
+    color: #fff;
+  }
+  
+  /* ========== Contenido principal ========== */
+  #servicios {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo */
+    margin: 40px auto; /* Centrado y con márgenes */
+  }
+
+  main {
+    width: 90%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px; /* Agrega un poco de espacio interno para no estar tan cerca de los bordes */
+  }
+  
+  section {
+    margin-bottom: 60px;
+  }
+  
+  #mision p{
+    text-align: justify;
+  }
+
+  #vision p{
+    text-align: justify;
+  }
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 30px; /* Aumenta el espacio debajo del título */
+    border-left: 5px solid var(--color-claro);
+    padding-left: 15px; /* Aumenta el padding para mayor separación entre el borde y el texto */
+    color: var(--color-titulo); /* Asegúrate de que el color del título sea visible */
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Crea 3 columnas de igual tamaño */
+    gap: 30px; /* Espacio entre columnas y filas */
+    margin-bottom: 40px; /* Espacio entre secciones */
+  }
+  
+  .card {
+    background-color: var(--color-card);
+    padding: 20px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animaciones para transformaciones */
+    text-align: center; /* Centra el contenido dentro de la tarjeta */
+    cursor: pointer; /* Añade el cursor tipo mano al pasar sobre la tarjeta */
+  }
+  
+  .card:hover {
+    transform: translateY(-10px); /* Mueve la tarjeta hacia arriba al pasar el ratón */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Agrega sombra en hover */
+  }
+  
+  .card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px; /* Espacio entre el título y el texto */
+    color: var(--color-titulo); /* Ajusta el color */
+  }
+  
+  .card p {
+    font-size: 1rem;
+    color: var(--color-texto);
+    line-height: 1.6;
+  }
+  
+  .cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .card {
+    flex: 1 1 30%;
+    background-color: var(--color-card);
+    padding: 20px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    min-width: 250px;
+  }
+  
+ 
+  @media (max-width: 768px) {
+    .cards {
+      flex-direction: column;
+    }
+  
+    .card {
+      width: 100%;
+      min-width: unset; /* Elimina restricción mínima */
+    }
+  }
+  
+  /* ========== Aparte ========== */
+  /* ========== Formulario ========== */
+  #contacto {
+    width: 90%;
+    max-width: 800px; /* Ajuste para que no sea demasiado ancho */
+    margin: 40px auto; /* Centrado con márgenes superiores e inferiores */
+    padding: 20px;
+    background-color: var(--color-fondo); /* Fondo suave para el formulario */
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  #contacto h2 {
+    font-size: 2rem;
+    margin-bottom: 20px; /* Espacio entre el título y el contenido */
+    text-align: center; /* Centrado del título */
+  }
+  
+  #contacto p {
+    font-size: 1rem;
+    color: var(--color-texto);
+    text-align: center; /* Centrado del texto */
+    margin-bottom: 30px; /* Espacio entre la descripción y el formulario */
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espacio mayor entre los elementos del formulario */
+  }
+  
+  input,
+  textarea {
+    padding: 12px;
+    border: 1px solid var(--color-borde);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: var(--color-fondo-input); /* Fondo de los inputs más suave */
+    transition: border 0.3s ease;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: var(--color-claro); /* Color de borde al enfocar */
+    outline: none; /* Elimina el borde por defecto del navegador */
+  }
+  
+  textarea {
+    resize: vertical;
+    min-height: 120px; /* Altura mínima de la caja de texto */
+  }
+  
+  button {
+    padding: 12px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: var(--color-claro);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: var(--color-hover);/* Efecto al pasar el ratón */
+  }
+  
+  button:active {
+    background-color: var(--color-primario);/* Efecto al presionar */
+  }
+  
+  
+  /* ========== Footer ========== */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--color-card);
+    color: var(--color-texto);
+    border-top: 1px solid var(--color-borde);
+  }
+
+  footer a{
+    color: var(--color-fondo);
+    text-decoration: none;
+  }
+  
+  /* ========== Modal ========== */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .modal-content {
+    background-color: var(--color-fondo);
+    padding: 30px;
+    border-radius: 8px;
+    max-width: 600px;
+    max-height: 80%;
+    overflow-y: auto;
+    color: var(--color-texto);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  .modal-content h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  .modal-content h4 {
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 1.1rem;
+  }
+  
+  .modal-content p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: justify;
+  }
+  
+  .close {
+    float: right;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-claro);
+  }
+
+.social-icons {
+  margin: 10px 0;
+}
+
+.social-icons i {
+  font-size: 1.7rem;
+  margin: 0 12px;
+  color: white;
+  transition: transform 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  transform: scale(1.2);
+  color: var(--color-claro);
+}
+
+.boton {
+  background-color: transparent;
+  color: var(--color-oscuro);
+  border: 1px solid var(--color-acento);
+  padding: 10px 25px;
+  margin: 15px auto;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 30px;
+  display: inline-block;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 15px auto;
+
+}
+
+.boton:hover {
+  background-color: var(--color-acento);
+  color: var(--color-oscuro);
+  transform: scale(1.05);
+  box-shadow: 0 0 10px var(--color-acento);
+}
+
+.multimedia {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.multimedia iframe {
+  border: 4px solid var(--color-acento);
+  border-radius: 6px;
+  margin: 20px auto;
+  max-width: 90%;
+  display: block;
+}
+
+.multimedia img {
+  border: 4px solid var(--color-claro);
+  max-width: 90%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
